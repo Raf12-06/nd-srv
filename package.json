@@ -1,0 +1,12 @@
+{
+  "name": "nd-srv",
+  "version": "0.0.2",
+  "type": "module",
+  "description": "library to start the web server ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rafail <myhametshin.rafael@outlook.com>",
+  "license": "ISC"
+}
