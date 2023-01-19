@@ -1,7 +1,6 @@
 {
   "name": "nd-srv",
   "version": "0.0.4",
-  "type": "module",
   "description": "library to start the web server ",
   "main": "index.js",
   "scripts": {
