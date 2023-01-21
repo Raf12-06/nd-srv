@@ -29,5 +29,11 @@ const server = new Server({
     router: router,
     context: Context
 });
-server.response((res, data) => { res.end(data) });
+server.response((res, data) => {
+    console.log(data);
+})
+server.request((req) => {
+    console.log('req')
+});
+
 server.start(8080);
