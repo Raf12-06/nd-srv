@@ -4,8 +4,11 @@
   "description": "library to start the web server ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon test.js"
   },
   "author": "rafail <myhametshin.rafael@outlook.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }

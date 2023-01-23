@@ -2,7 +2,8 @@ const { Server, Context, Router } = require('./index');
 
 const router = new Router({
     '/api': {
-        method: 'GET',
+        url: '/api',
+        method: 'POST',
         schema: {
             page: {
                 type: 'number',
@@ -19,8 +20,26 @@ const router = new Router({
                 require: true,
             },
         },
-        async handler(client) {
+        async preHandler(client) {
+
+        },
+        async handler(data) {
             return 'hello';
+        },
+        async postHandler(client) {
+            client.setHeader('asdafasf', '123');
+            client.setCookie('12344', '124')
+        }
+    },
+    '/hello': {
+        url: '/hello',
+        method: 'GET',
+        async preHandler(client) {
+        },
+        async handler(data) {
+            return 'hello2';
+        },
+        async postHandler(client) {
         }
     }
 });
@@ -29,11 +48,15 @@ const server = new Server({
     router: router,
     context: Context
 });
-server.response((res, data) => {
+server.request((req) => {
+
+})
+server.response((err, res, data) => {
+    if (err) {
+        console.log('\x1b[2;31mERROR')
+        console.log(err);
+    }
     console.log(data);
 })
-server.request((req) => {
-    console.log('req')
-});
 
 server.start(8080);
