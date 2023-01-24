@@ -1,31 +1,38 @@
 const { Server, Context, Router } = require('./index');
 
 const router = new Router({
+    '/car': {
+        router: {
+            '/model': {
+                url: '/car/model',
+                method: 'GET',
+                async handler(data) {
+                    return 'hello2';
+                }
+            },
+            '/mark': {
+                url: '/car/mark',
+                method: 'POST',
+                async handler(data) {
+                    return 'hello2';
+                }
+            },
+            '/status': {
+                router: {
+                    '/fuel': {
+                        url: '/car/model',
+                        method: 'OPTION',
+                        async handler(data) {
+                            return 'hello2';
+                        }
+                    }
+                }
+            }
+        }
+    },
     '/api': {
         url: '/api',
         method: 'POST',
-        schema: {
-            page: {
-                type: 'number',
-                reference: {
-                    length: { min: 0 },
-                },
-                require: true,
-            },
-            limit: {
-                type: 'number',
-                reference: {
-                    length: { min: 0 },
-                },
-                require: true,
-            },
-        },
-        async preHandler(client) {
-
-        },
-        async handler(data) {
-            return 'hello';
-        },
         async postHandler(client) {
             client.setHeader('asdafasf', '123');
             client.setCookie('12344', '124')
@@ -34,12 +41,62 @@ const router = new Router({
     '/hello': {
         url: '/hello',
         method: 'GET',
-        async preHandler(client) {
-        },
         async handler(data) {
             return 'hello2';
-        },
-        async postHandler(client) {
+        }
+    },
+    '/user': {
+        router: {
+            '/': {
+                url: '/user',
+                method: 'POST',
+                async handler(data) {
+                    return '/user/name';
+                }
+            },
+            '/name': {
+                url: '/user/name',
+                method: 'GET',
+                async handler(data) {
+                    return '/user/name';
+                }
+            },
+            '/age': {
+                url: '/user/age',
+                method: 'GET',
+                async handler(data) {
+                    return '/user/age';
+                }
+            },
+            '/access': {
+                router: {
+                    '/role': {
+                        url: '/user/access/role',
+                        method: 'GET',
+                        async handler(data) {
+                            return '/user/age';
+                        }
+                    },
+                    '/static': {
+                        router: {
+                            '/': {
+                                url: '/user/access/static',
+                                method: 'POST',
+                                async handler(data) {
+                                    return 12;
+                                }
+                            }
+                        }
+                    },
+                    '/stat': {
+                        url: '/user/access/stat',
+                        method: 'OPTION',
+                        async handler(data) {
+                            return 12;
+                        }
+                    }
+                }
+            }
         }
     }
 });
@@ -59,4 +116,4 @@ server.response((err, res, data) => {
     console.log(data);
 })
 
-server.start(8080);
+server.start(8001);
