@@ -3,7 +3,7 @@ import {Schema} from "./Validator";
 export type Routing = Record<string, Rout | RoutParam>;
 
 export interface RoutParam {
-    url: string,
+    url?: string,
     method: Method,
     schema?: Schema,
     preHandler?: Function,

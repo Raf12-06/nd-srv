@@ -1,12 +1,11 @@
-import { Routing } from './Router';
-import { Context } from "./Context";
+import { Router } from './Router';
 import {IncomingMessage} from "http";
 
 export declare class Server {
 
     constructor(option: {
-        router: Routing,
-        context: Context,
+        router: Router,
+        context: any,
         app: any
     });
 
