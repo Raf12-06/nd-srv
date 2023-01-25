@@ -1,6 +1,6 @@
 {
   "name": "nd-srv",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "library to start the web server ",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "rafail <myhametshin.rafael@outlook.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^18.11.18",
     "nodemon": "^2.0.20"
   }
 }
