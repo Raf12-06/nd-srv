@@ -4,7 +4,7 @@ export type Routing = Record<string, Rout | RoutParam>;
 
 export interface RoutParam {
     url?: string,
-    method: Method,
+    method: 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE'| 'CONNECT' | 'OPTIONS' | 'TRACE' | 'PATH',
     schema?: Schema,
     preHandler?: Function,
     handler: Function,
@@ -17,23 +17,6 @@ export interface Rout {
     description?: string,
 }
 
-/**
- * Поддерживаемые http методы
- */
-export enum Method {
-    GET = 'GET',
-    HEAD = 'HEAD',
-    POST = 'POST',
-    PUT = 'PUT',
-    DELETE = 'DELETE',
-    CONNECT = 'CONNECT',
-    OPTIONS = 'OPTIONS',
-    TRACE = 'TRACE',
-    PATH = 'PATH'
-}
-
 export declare class Router {
     constructor(routs: Routing);
-
-    public getHandlerParam(method: Method, pathname: string): RoutParam;
 }

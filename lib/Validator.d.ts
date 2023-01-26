@@ -3,20 +3,13 @@ interface Reference {
 }
 
 interface SchemaField {
-    type: Type,
+    type: 'number' | 'string' | 'boolean' | 'Array',
     require?: boolean,
     default?: any,
     reference?: Reference,
 }
 
 export type Schema = Record<string, SchemaField>
-
-export enum Type {
-    number = 'number',
-    string = 'string',
-    boolean = 'boolean',
-    array = 'Array',
-}
 
 export declare class Validator {
 
