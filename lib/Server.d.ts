@@ -1,5 +1,5 @@
 import { Router } from './Router';
-import {IncomingMessage} from "http";
+import { IncomingMessage } from "http";
 
 export declare class Server {
 

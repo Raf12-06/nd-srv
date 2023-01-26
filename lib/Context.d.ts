@@ -20,26 +20,26 @@ export declare class Context {
     /**
      * Тело запроса
      */
-    body: Object;
+    body: any;
     /**
      * Объект заголовков
      */
-    headers: Object;
+    headers: any;
     /**
      * Объект cookie
      */
-    cookie: Object;
+    cookie: any;
 
-    constructor(req: IncomingMessage, body: Record<string, any>);
+    constructor(req: IncomingMessage, body: any);
     /**
      *
      * Подготавливает Set-Cookie заголовок для отправки на клиент
      */
-    public setCookie(name: string, val: string | number, option: {
-        expires: string,
-        maxAge: string,
-        path: string,
-        httpOnly: boolean,
+    public setCookie(name: string, val: string | number, option?: {
+        expires?: string,
+        maxAge?: string,
+        path?: string,
+        httpOnly?: boolean,
     }): void;
     /**
      *
