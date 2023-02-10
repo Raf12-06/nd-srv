@@ -24,13 +24,13 @@ export declare class Context {
     /**
      * Объект заголовков
      */
-    headers: any;
+    headers: Object;
     /**
      * Объект cookie
      */
-    cookie: any;
+    cookie: Object;
 
-    constructor(req: IncomingMessage, body: any);
+    constructor(req: IncomingMessage, body: Record<string, any>);
     /**
      *
      * Подготавливает Set-Cookie заголовок для отправки на клиент
