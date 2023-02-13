@@ -1,7 +1,7 @@
 import { Context } from "./lib/Context";
-import { Router, Routing, Rout, RoutParam } from "./lib/Router";
+import { Router, Routing, Rout, RoutParam, ReqHandler } from "./lib/Router";
 import { Validator, Schema } from "./lib/Validator";
-import { Server } from "./lib/Server";
+import { Srv } from "./lib/Server";
 
 export {
     Context,
@@ -11,5 +11,6 @@ export {
     RoutParam,
     Validator,
     Schema,
-    Server
+    Srv,
+    ReqHandler
 }

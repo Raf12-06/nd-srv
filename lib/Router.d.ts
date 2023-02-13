@@ -12,6 +12,23 @@ export interface Rout {
     description?: string,
 }
 /**
+ * Данные запроса, поступающие в основной обработчик
+ */
+export type ReqHandler = {
+    /**
+     * Параметры запроса
+     */
+    query: Record<string, string>,
+    /**
+     * Обработанные Cookie
+     */
+    cookie: Record<string, string>,
+    /**
+     * Обработанные заголовки
+     */
+    headers: Record<string, string>
+}
+/**
  * Тип конечного роута
  */
 export interface RoutParam {
@@ -37,20 +54,7 @@ export interface RoutParam {
      * @param data Валидированные по схеме дынные
      * @param req Объект с параметрами запроса
      */
-    handler: (data: any, req: {
-        /**
-         * Параметры запроса
-         */
-        query: Record<string, string>,
-        /**
-         * Обработанные Cookie
-         */
-        cookie: Record<string, string>,
-        /**
-         * Обработанные заголовки
-         */
-        headers: Record<string, string>
-    }) => Promise<any>,
+    handler: (data: any, req: ReqHandler) => Promise<any>,
     /**
      * Последний обработчик, который выполняется в полседнюю очередь, имеющий доступ к обеъкту клинета
      * можно использовать для установки заголовков
