@@ -34,34 +34,34 @@ interface Reference {
     /**
      * Ограничение длинны строки/числа/массива
      */
-    length: {
-        min: number,
-        max: number,
+    length?: {
+        min?: number,
+        max?: number,
     },
     /**
      * Шаблон RegExp для сравнения строки
      */
-    match: RegExp,
+    match?: RegExp,
     /**
      * Проверка числа на > 0
      */
-    ID: boolean,
+    ID?: boolean,
     /**
      * Проверка массива на содержание чисел > 0
      */
-    listID: boolean,
+    listID?: boolean,
     /**
      * Проверка массива на седержание элементов указанного типа
      */
-    elementType: Type,
+    elementType?: Type,
     /**
      * Проверка массива строк на шаблон RegExp
      */
-    elementMatch: RegExp,
+    elementMatch?: RegExp,
     /**
      * Перебор массива, для создания кастомной валидации
      */
-    elementIf: (el: any) => void,
+    elementIf?: (el: any) => void,
 }
 /**
  * Класс, предоставляющий методы валидации
