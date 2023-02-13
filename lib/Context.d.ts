@@ -1,10 +1,8 @@
 import { IncomingMessage } from 'http';
-
 /**
  * Класс для работы с контекстом клиента
  */
 export declare class Context {
-
     /**
      * Маршрут обращения
      */

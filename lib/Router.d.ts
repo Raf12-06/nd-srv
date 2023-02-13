@@ -1,22 +1,54 @@
-import {Schema} from "./Validator";
-
+import { Schema } from "./Validator";
+import {Context} from "./Context";
+/**
+ * Тип объекта с роутами
+ */
 export type Routing = Record<string, Rout | RoutParam>;
-
-export interface RoutParam {
-    url?: string,
-    method: 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE'| 'CONNECT' | 'OPTIONS' | 'TRACE' | 'PATH',
-    schema?: Schema,
-    preHandler?: Function,
-    handler: Function,
-    postHandler?: Function,
-    description?: string,
-}
-
+/**
+ * Тип роутера
+ */
 export interface Rout {
     router: Router,
     description?: string,
 }
-
+/**
+ * Тип конечного роута
+ */
+export interface RoutParam {
+    /**
+     * Итоговая строка роута (используется для документации)
+     */
+    url?: string,
+    /**
+     * Типы доступных http запросов
+     */
+    method: 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE'| 'CONNECT' | 'OPTIONS' | 'TRACE' | 'PATH',
+    /**
+     * Схема валидации тела запроса
+     */
+    schema?: Schema,
+    /**
+     * Первый обработчик, который выполняется в первую очередь, имеющий доступ к обеъкту клинета
+     * можно использовать для установки заголовков или проверки доступа
+     */
+    preHandler?: (client: Context) => void,
+    /**
+     * Основной обработчик запроса, имеющий доступ только к валидированному по указанной схеме, телу запроса
+     */
+    handler: (data: any) => any,
+    /**
+     * Последний обработчик, который выполняется в полседнюю очередь, имеющий доступ к обеъкту клинета
+     * можно использовать для установки заголовков
+     */
+    postHandler?: (client: Context) => void,
+    /**
+     * Описание роута
+     */
+    description?: string,
+}
+/**
+ * Класс для создания главного роутера сервера
+ */
 export declare class Router {
     constructor(routs: Routing);
 }
