@@ -1,15 +1,23 @@
 import { Router } from './Router';
 import { IncomingMessage, ServerResponse, Server } from "http";
-import { Context } from "./Context";
 
 export declare class Srv {
     /**
      * Создание объекта сервера
      */
     constructor(option: {
+        /**
+         * Объект главнного роутера
+         */
         router: Router,
-        context: Context,
-        app: Server<typeof IncomingMessage, typeof ServerResponse>;
+        /**
+         * Сервер Http модуля
+         */
+        app: Server<typeof IncomingMessage, typeof ServerResponse>,
+        /**
+         * Ссылка на класс Context
+         */
+        context: any,
     });
     /**
      * Отображает запрос для анализа
