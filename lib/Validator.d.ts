@@ -1,7 +1,15 @@
 /**
  * Основные валидируемые типы
  */
-type Type = 'number' | 'string' | 'boolean' | 'Array' | 'Date';
+type Type =
+    'number' |
+    'string' |
+    'boolean' |
+    'Array' |
+    /** Объект даты es5 */
+    'Date' |
+    /** Строка в формате Date ISO, которая будет преобразованна в Date */
+    'DateIso';
 /**
  * Основной тип схемы [поле обхекта: схема валидации для поля]
  */
