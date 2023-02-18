@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9349a0a-0eb4-496a-a515-52fef792062e" name="Changes" comment="" />
+    <list default="true" id="f9349a0a-0eb4-496a-a515-52fef792062e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Validator.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Validator.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -55,6 +61,7 @@
       <workItem from="1676044548005" duration="131000" />
       <workItem from="1676298826494" duration="4931000" />
       <workItem from="1676304582597" duration="2525000" />
+      <workItem from="1676713661085" duration="2161000" />
     </task>
     <servers />
   </component>
