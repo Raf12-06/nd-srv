@@ -11,10 +11,6 @@ export declare class Srv {
          */
         router: Router,
         /**
-         * Сервер Http модуля
-         */
-        app: Server<typeof IncomingMessage, typeof ServerResponse>,
-        /**
          * Ссылка на класс Context
          */
         context: any,

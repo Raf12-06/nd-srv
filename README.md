@@ -1,5 +1,5 @@
 # nd-srv
-## _Simly libriary to start the web server_
+## _Simply library to start the web server_
 
 It includes the basic functionality of a standard http server: routing, validation of input data, processing http headers and working with cookies.
 
@@ -176,7 +176,7 @@ When a request is received, a class object is created with the request object an
     * `httpOnly` **Boolean**
 
 ## `context.setHeader(name, value)`
-* `name` **String** - name of headeer
+* `name` **String** - name of header
 * `value` **String** - value of header
 
 ## `conetext.delCookie(name)`
